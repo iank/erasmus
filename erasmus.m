@@ -1,7 +1,7 @@
 im = imread('PerlinNoise2d.png', 'png');
 im = double(im(:,:,1));
 
-n = 60;
+n = 4;
 % rng(1237)  % successful agent
 epsilon = 10;
 lambda = 0.001;
@@ -63,6 +63,6 @@ for generation=1:gens
     agents = np;
 end
 
-idx = find(cost == min(cost));
+idx = find(cost == min(cost), 1);
 bestAgent = agents(:,idx);
 agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1);
