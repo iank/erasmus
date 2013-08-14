@@ -19,12 +19,14 @@ for i=1:P
     agents(:,i) = randn(n,1)*0.1;
 end
 
+getXm = memoize1(@getX);
+
 cost = zeros(1,P);
 mc = zeros(gens,1);
 for generation=1:gens
     tic
     for i=1:P
-        [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN, 0);
+        [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN, 0, getXm);
     end
     disp(sprintf('Generation %d/%d: %6.3f (finished: %d %2.3f)', generation, gens, min(cost), f(find(cost == min(cost), 1)), sum(f)/numel(f)));
     mc(generation) = min(cost);
@@ -65,4 +67,4 @@ end
 
 idx = find(cost == min(cost), 1);
 bestAgent = agents(:,idx);
-agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1);
+agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1, getXm);

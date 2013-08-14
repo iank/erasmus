@@ -1,4 +1,4 @@
-function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp)
+function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp, getXm)
     cost = 0;
     if (disp)
         imagesc(im); colormap(gray); hold on
@@ -8,7 +8,7 @@ function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp)
         tp2 = p2;
 
         a = im(p2,p1);
-        X = getX(im, p1, p2, n, epsilon);
+        X = getXm(im, p1, p2, n, epsilon);
         theta_hat = h_ax(alpha, X);
         p1 = round(p1 + epsilon*cos(theta_hat));
         p2 = round(p2 + epsilon*sin(theta_hat));
