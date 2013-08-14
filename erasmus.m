@@ -3,15 +3,15 @@ im = double(im(:,:,1));
 
 n = 60;
 % rng(1237)  % successful agent
-epsilon = 20;
-lambda = 0.01;
-maxN = 200;
+epsilon = 10;
+lambda = 0.001;
+maxN = 300;
 
-p1 = 0;
+p1 = 30;
 p2 = 250;
 
 P = 200; % population size
-gens = 400;
+gens = 50;
 
 % Initial population
 agents = zeros(n, P);
@@ -20,12 +20,14 @@ for i=1:P
 end
 
 cost = zeros(1,P);
+mc = zeros(gens,1);
 for generation=1:gens
     tic
     for i=1:P
         [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN, 0);
     end
-    disp(sprintf('Generation %d/%d: %6.3f (finished: %d)', generation, gens, min(cost), f(find(cost == min(cost),1))));
+    disp(sprintf('Generation %d/%d: %6.3f (finished: %d %2.3f)', generation, gens, min(cost), f(find(cost == min(cost), 1)), sum(f)/numel(f)));
+    mc(generation) = min(cost);
     toc
 
     % New population
@@ -36,7 +38,7 @@ for generation=1:gens
 
     % Create rest of population via crossover
     weights = 1 ./ (cost ./ sum(cost));
-    for j=2:(P-10)
+    for j=2:(P-15)
         % Select parents
         idx = randweightedpick(weights, 2);
         parents = agents(:,idx);
@@ -47,7 +49,7 @@ for generation=1:gens
         child(pivots(1):pivots(2)) = parents(pivots(1):pivots(2),2);
 
         % Mutate
-        mb = rand(size(child)) < 0.01;
+        mb = rand(size(child)) < 0.02;
         nb = 0.1*randn(sum(mb),1);
 
         child(mb) = nb;
@@ -55,7 +57,7 @@ for generation=1:gens
     end
 
     % Entirely new agents
-    for j=(P-9):P
+    for j=(P-14):P
         np(:,j) = 0.1*randn(n,1);
     end
     agents = np;

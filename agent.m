@@ -24,6 +24,7 @@ function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp)
         if (cn < 0)
             cn = -.5*cn;
         end
+        cn = cn*cn;
 
         cost = cost + cn;     % Add slope cost
         cost = cost + lambda; % Add step cost
@@ -39,7 +40,7 @@ function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp)
         end
     end
     % If we made it here, we have not finished. Add a penalty.
-    cost = cost + 100;
+    cost = cost + 3000;
     f = 0;
 %    disp(sprintf('Unfinished! %6.3f (%d)', cost, i));
 end
