@@ -8,7 +8,8 @@ function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp)
         tp2 = p2;
 
         a = im(p2,p1);
-        X = getX(im, p1, p2, n, epsilon);
+        X = getX(im, p1, p2, n/2, epsilon);
+        X = [X; getX(im, p1, p2, n/2, epsilon*2)];
         theta_hat = h_ax(alpha, X);
         p1 = round(p1 + epsilon*cos(theta_hat));
         p2 = round(p2 + epsilon*sin(theta_hat));

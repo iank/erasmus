@@ -1,0 +1,3 @@
+2013-08-14_400gen_2level_epsilon:
+
+Used n=120 features. First 60 were directional derivative approximations w/ epsilon, last 60 were same but with 2*epsilon.
