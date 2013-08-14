@@ -7,7 +7,7 @@ epsilon = 20;
 lambda = 0.01;
 maxN = 200;
 
-p1 = 250;
+p1 = 0;
 p2 = 250;
 
 P = 200; % population size
@@ -23,7 +23,7 @@ cost = zeros(1,P);
 for generation=1:gens
     tic
     for i=1:P
-        [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN);
+        [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN, 0);
     end
     disp(sprintf('Generation %d/%d: %6.3f (finished: %d)', generation, gens, min(cost), f(find(cost == min(cost),1))));
     toc
@@ -60,3 +60,7 @@ for generation=1:gens
     end
     agents = np;
 end
+
+idx = find(cost == min(cost));
+bestAgent = agents(:,idx);
+agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1);

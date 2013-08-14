@@ -1,6 +1,12 @@
-function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN)
+function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN, disp)
     cost = 0;
+    if (disp)
+        imagesc(im); colormap(gray); hold on
+    end
     for i=1:maxN
+        tp1 = p1;
+        tp2 = p2;
+
         a = im(p2,p1);
         X = getX(im, p1, p2, n, epsilon);
         theta_hat = h_ax(alpha, X);
@@ -21,6 +27,10 @@ function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN)
 
         cost = cost + cn;     % Add slope cost
         cost = cost + lambda; % Add step cost
+
+        if (disp)
+            plot([tp1 min(p1,size(im,2))], [tp2 p2], 'red-X', 'LineWidth', 3);
+        end
 
         if (p1 > size(im,2))
             f = 1;
