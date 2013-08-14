@@ -3,8 +3,8 @@ im = double(im(:,:,1));
 
 n = 60;
 % rng(1237)  % successful agent
-epsilon = 5;
-lambda = 3;
+epsilon = 20;
+lambda = 0.01;
 maxN = 200;
 
 p1 = 250;
@@ -23,9 +23,9 @@ cost = zeros(1,P);
 for generation=1:gens
     tic
     for i=1:P
-        cost(i)=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN);
+        [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN);
     end
-    disp(sprintf('Generation %d/%d: %6.3f', generation, gens, min(cost)));
+    disp(sprintf('Generation %d/%d: %6.3f (finished: %d)', generation, gens, min(cost), f(find(cost == min(cost),1))));
     toc
 
     % New population
@@ -36,7 +36,7 @@ for generation=1:gens
 
     % Create rest of population via crossover
     weights = 1 ./ (cost ./ sum(cost));
-    for j=2:P
+    for j=2:(P-10)
         % Select parents
         idx = randweightedpick(weights, 2);
         parents = agents(:,idx);
@@ -52,6 +52,11 @@ for generation=1:gens
 
         child(mb) = nb;
         np(:,j) = child;
+    end
+
+    % Entirely new agents
+    for j=(P-9):P
+        np(:,j) = 0.1*randn(n,1);
     end
     agents = np;
 end

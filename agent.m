@@ -1,4 +1,4 @@
-function cost=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN)
+function [cost, f]=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN)
     cost = 0;
     for i=1:maxN
         a = im(p2,p1);
@@ -19,11 +19,17 @@ function cost=agent(im, alpha, p1, p2, epsilon, lambda, n, maxN)
             cn = -.5*cn;
         end
 
-        cost = cost + cn;
+        cost = cost + cn;     % Add slope cost
+        cost = cost + lambda; % Add step cost
 
         if (p1 > size(im,2))
-            cost = cost + lambda*i;
-            break;
+            f = 1;
+%            disp(sprintf('Finished!   %6.3f (%d)', cost, i));
+            return;
         end
     end
+    % If we made it here, we have not finished. Add a penalty.
+    cost = cost + 100;
+    f = 0;
+%    disp(sprintf('Unfinished! %6.3f (%d)', cost, i));
 end
