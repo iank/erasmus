@@ -56,7 +56,7 @@ function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, dis
         f = p1 > size(im,2);
     end
     % Add a penalty to agents which have still not finished
-    cost = cost + (1-f).*3000;
+    cost = cost + (1-f).*3000000;
 
     ret = agents;
     for k=1:P
