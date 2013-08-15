@@ -1,0 +1,203 @@
+Show best path across generations
+
+>> erasmus
+Generation 1/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 1.068983 seconds.
+Generation 2/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.544061 seconds.
+Generation 3/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.565336 seconds.
+Generation 4/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.548853 seconds.
+Generation 5/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.548252 seconds.
+Generation 6/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.554608 seconds.
+Generation 7/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.546489 seconds.
+Generation 8/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.559427 seconds.
+Generation 9/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.554160 seconds.
+Generation 10/100: 3000000.500 (finished: 0 0.000)
+Elapsed time is 0.556588 seconds.
+Generation 11/100: 260100.279 (finished: 1 0.005)
+Elapsed time is 1.099138 seconds.
+Generation 12/100: 147076.280 (finished: 1 0.010)
+Elapsed time is 1.101678 seconds.
+Generation 13/100: 76738.276 (finished: 1 0.045)
+Elapsed time is 1.072425 seconds.
+Generation 14/100: 76738.276 (finished: 1 0.295)
+Elapsed time is 0.530322 seconds.
+Generation 15/100: 32386.262 (finished: 1 0.720)
+Elapsed time is 1.075577 seconds.
+Generation 16/100: 32386.262 (finished: 1 0.875)
+Elapsed time is 0.444623 seconds.
+Generation 17/100: 32386.262 (finished: 1 0.855)
+Elapsed time is 0.425117 seconds.
+Generation 18/100: 128.261 (finished: 1 0.840)
+Elapsed time is 0.973644 seconds.
+Generation 19/100: 128.261 (finished: 1 0.805)
+Elapsed time is 0.491943 seconds.
+Generation 20/100: 128.261 (finished: 1 0.890)
+Elapsed time is 0.420327 seconds.
+Generation 21/100: 128.261 (finished: 1 0.870)
+Elapsed time is 0.438705 seconds.
+Generation 22/100:  0.260 (finished: 1 0.880)
+Elapsed time is 0.987085 seconds.
+Generation 23/100:  0.260 (finished: 1 0.880)
+Elapsed time is 0.421191 seconds.
+Generation 24/100:  0.260 (finished: 1 0.885)
+Elapsed time is 0.472610 seconds.
+Generation 25/100:  0.260 (finished: 1 0.880)
+Elapsed time is 0.417020 seconds.
+Generation 26/100:  0.260 (finished: 1 0.880)
+Elapsed time is 0.423819 seconds.
+Generation 27/100:  0.260 (finished: 1 0.890)
+Elapsed time is 0.461348 seconds.
+Generation 28/100:  0.260 (finished: 1 0.880)
+Elapsed time is 0.431442 seconds.
+Generation 29/100:  0.260 (finished: 1 0.860)
+Elapsed time is 0.434796 seconds.
+Generation 30/100:  0.260 (finished: 1 0.880)
+Elapsed time is 0.449324 seconds.
+Generation 31/100:  0.260 (finished: 1 0.850)
+Elapsed time is 0.454756 seconds.
+Generation 32/100:  0.260 (finished: 1 0.900)
+Elapsed time is 0.430190 seconds.
+Generation 33/100:  0.260 (finished: 1 0.870)
+Elapsed time is 0.453186 seconds.
+Generation 34/100:  0.260 (finished: 1 0.895)
+Elapsed time is 0.432597 seconds.
+Generation 35/100:  0.260 (finished: 1 0.845)
+Elapsed time is 0.434347 seconds.
+Generation 36/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.958532 seconds.
+Generation 37/100:  0.245 (finished: 1 0.830)
+Elapsed time is 0.476494 seconds.
+Generation 38/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.437897 seconds.
+Generation 39/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.430021 seconds.
+Generation 40/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.439333 seconds.
+Generation 41/100:  0.245 (finished: 1 0.915)
+Elapsed time is 0.437974 seconds.
+Generation 42/100:  0.245 (finished: 1 0.855)
+Elapsed time is 0.462967 seconds.
+Generation 43/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.426603 seconds.
+Generation 44/100:  0.245 (finished: 1 0.855)
+Elapsed time is 0.448983 seconds.
+Generation 45/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.456779 seconds.
+Generation 46/100:  0.245 (finished: 1 0.895)
+Elapsed time is 0.463413 seconds.
+Generation 47/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.421545 seconds.
+Generation 48/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.457770 seconds.
+Generation 49/100:  0.245 (finished: 1 0.845)
+Elapsed time is 0.450761 seconds.
+Generation 50/100:  0.245 (finished: 1 0.895)
+Elapsed time is 0.430626 seconds.
+Generation 51/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.458785 seconds.
+Generation 52/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.443720 seconds.
+Generation 53/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.432649 seconds.
+Generation 54/100:  0.245 (finished: 1 0.915)
+Elapsed time is 0.435084 seconds.
+Generation 55/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.427114 seconds.
+Generation 56/100:  0.245 (finished: 1 0.855)
+Elapsed time is 0.425100 seconds.
+Generation 57/100:  0.245 (finished: 1 0.895)
+Elapsed time is 0.425039 seconds.
+Generation 58/100:  0.245 (finished: 1 0.895)
+Elapsed time is 0.448801 seconds.
+Generation 59/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.424037 seconds.
+Generation 60/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.426239 seconds.
+Generation 61/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.413536 seconds.
+Generation 62/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.426201 seconds.
+Generation 63/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.448364 seconds.
+Generation 64/100:  0.245 (finished: 1 0.900)
+Elapsed time is 0.438042 seconds.
+Generation 65/100:  0.245 (finished: 1 0.875)
+Elapsed time is 0.413203 seconds.
+Generation 66/100:  0.245 (finished: 1 0.875)
+Elapsed time is 0.438987 seconds.
+Generation 67/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.428580 seconds.
+Generation 68/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.417877 seconds.
+Generation 69/100:  0.245 (finished: 1 0.875)
+Elapsed time is 0.421716 seconds.
+Generation 70/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.453070 seconds.
+Generation 71/100:  0.245 (finished: 1 0.850)
+Elapsed time is 0.428692 seconds.
+Generation 72/100:  0.245 (finished: 1 0.865)
+Elapsed time is 0.414260 seconds.
+Generation 73/100:  0.245 (finished: 1 0.855)
+Elapsed time is 0.435191 seconds.
+Generation 74/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.424895 seconds.
+Generation 75/100:  0.245 (finished: 1 0.875)
+Elapsed time is 0.436994 seconds.
+Generation 76/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.420375 seconds.
+Generation 77/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.425997 seconds.
+Generation 78/100:  0.245 (finished: 1 0.900)
+Elapsed time is 0.425944 seconds.
+Generation 79/100:  0.245 (finished: 1 0.845)
+Elapsed time is 0.452323 seconds.
+Generation 80/100:  0.245 (finished: 1 0.865)
+Elapsed time is 0.443620 seconds.
+Generation 81/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.422860 seconds.
+Generation 82/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.423995 seconds.
+Generation 83/100:  0.245 (finished: 1 0.865)
+Elapsed time is 0.431007 seconds.
+Generation 84/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.453807 seconds.
+Generation 85/100:  0.245 (finished: 1 0.855)
+Elapsed time is 0.448455 seconds.
+Generation 86/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.414509 seconds.
+Generation 87/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.434952 seconds.
+Generation 88/100:  0.245 (finished: 1 0.900)
+Elapsed time is 0.420633 seconds.
+Generation 89/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.436405 seconds.
+Generation 90/100:  0.245 (finished: 1 0.905)
+Elapsed time is 0.428872 seconds.
+Generation 91/100:  0.245 (finished: 1 0.870)
+Elapsed time is 0.421318 seconds.
+Generation 92/100:  0.245 (finished: 1 0.850)
+Elapsed time is 0.444470 seconds.
+Generation 93/100:  0.245 (finished: 1 0.865)
+Elapsed time is 0.449025 seconds.
+Generation 94/100:  0.245 (finished: 1 0.885)
+Elapsed time is 0.434743 seconds.
+Generation 95/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.429255 seconds.
+Generation 96/100:  0.245 (finished: 1 0.890)
+Elapsed time is 0.423909 seconds.
+Generation 97/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.464338 seconds.
+Generation 98/100:  0.245 (finished: 1 0.855)
+Elapsed time is 0.438436 seconds.
+Generation 99/100:  0.245 (finished: 1 0.860)
+Elapsed time is 0.444564 seconds.
+Generation 100/100:  0.245 (finished: 1 0.880)
+Elapsed time is 0.417199 seconds.
