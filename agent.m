@@ -50,7 +50,7 @@ function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, dis
         cost = cost + (1-f).*cn;     % Add slope cost
         cost = cost + (1-f).*lambda; % Add step cost
 
-        if (disp)
+        if (disp & ~f)
             plot([tp1 min(p1,size(im,2))], [tp2 p2], 'red-X', 'LineWidth', 3);
         end
 
