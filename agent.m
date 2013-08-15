@@ -22,18 +22,13 @@ function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, dis
         p2p1 = sub2ind(size(im), p2, min(p1,size(im,2)));
         a = im(p2p1);
 
-        % FIXME: don't bother this calculation if f=1
-%        X = zeros(n,P);
-%        for k=find(f == 0)'
         X = getX(im, p1.*(1-f), p2.*(1-f), n, epsilon);
-%        end
         theta_hat = h_ax(alpha, X);
         p1 = round(p1 + epsilon*cos(theta_hat));
         p2 = round(p2 + epsilon*sin(theta_hat));
 
         p1 = max(1, p1);
         p2 = max(1, p2);
-    %    p1 = min(p1, size(im,2));
         p2 = min(p2, size(im,1));
 
         p2p1 = sub2ind(size(im), p2, min(p1, size(im,2)));
@@ -50,7 +45,7 @@ function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, dis
         cost = cost + (1-f).*lambda; % Add step cost
 
         if (disp & ~f)
-            plot([tp1 min(p1,size(im,2))], [tp2 p2], 'red-X', 'LineWidth', 3);
+            plot([tp1 min(p1,size(im,2))], [tp2 p2], 'red-', 'LineWidth', 2);
         end
 
         f = p1 > size(im,2);
