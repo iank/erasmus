@@ -21,8 +21,9 @@ for i=1:P
 end
 
 mc = zeros(gens,1);
+best = Inf;
 for generation=1:gens
-    tic
+    %tic
     agents=agent(im, agents, p1, p2, epsilon, lambda, n, maxN, 0);
     cost = [agents.cost];
     f = [agents.f];
@@ -30,10 +31,20 @@ for generation=1:gens
     best_f = f(best_idx);
     best_cost = min(cost);
     f_rat = sum(f)/numel(f);
-    
-    disp(sprintf('Generation %d/%d: %6.3f (finished: %d %2.3f)', generation, gens, best_cost, best_f, f_rat));
     mc(generation) = best_cost;
-    toc
+
+    if (best_cost < best)
+        best = best_cost;
+        bestAgent = agents(best_idx);
+
+%        figure;
+%        agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1);
+%        title({'Generation:', generation, 'Cost:', best_cost});
+    end
+    disp(sprintf('Generation %03d/%03d: %011.3f (finished: %d %2.3f)',...
+        generation, gens, best_cost, best_f, f_rat));
+    
+    %toc
 
     %%%% New population
     % Keep best individual (Elitism)
