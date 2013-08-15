@@ -1,17 +1,19 @@
-im = imread('PerlinNoise2d.png', 'png');
+%im = imread('PerlinNoise2d.png', 'png');
+im = imread('test.png', 'png');
 im = double(im(:,:,1));
 
 n = 4;
 % rng(1237)  % successful agent
-epsilon = 10;
+epsilon = 4;
 lambda = 0.001;
-maxN = 300;
+maxN = 500;
 
-p1 = 30;
-p2 = 250;
+%p1 = 17;
+%p2 = 219;
+p1 = 32; p2 = 68;
 
 P = 200; % population size
-gens = 50;
+gens = 100;
 
 % Initial population
 for i=1:P
