@@ -2,17 +2,17 @@
 im = imread('test.png', 'png');
 im = double(im(:,:,1));
 % smooth image
-%im = filter2(ones(20,20)/(20*20), im);
+im = filter2(ones(20,20)/(20*20), im);
 
 n = 4;
 % rng(1237)  % successful agent
 epsilon = 4;
-lambda = 1000;
+lambda = 1;
 maxN = 500;
 
 %p1 = 17;
 %p2 = 219;
-p1 = 32; p2 = 68;
+p1 = 34; p2 = 216;
 
 P = 200; % population size
 P_new = .1; % pct of population to be entirely new each generation
@@ -67,8 +67,8 @@ for generation=1:gens
         child.alpha(pivots(1):pivots(2)) = parents(2).alpha(pivots(1):pivots(2));
 
         % Mutate
-        mb = rand(size(child.alpha)) < 0.02;
-        nb = 0.1*trnd(2,sum(mb),1);
+        mb = rand(size(child.alpha)) < 0.04;
+        nb = child.alpha(mb)+0.01*trnd(2,sum(mb),1);
 
         child.alpha(mb) = nb;
         np(j) = child;
