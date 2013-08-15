@@ -1,0 +1,7 @@
+Zig-zag when going down or diagonally can be attributed to the low step cost, 0.001 (soln1.fig).
+
+Increasing the step cost to 50*N gets us soln2.fig
+
+Increasing the step cots further to 1000*N gets soln3.fig, where nonhorizontal paths are relatively smooth, and some shortcuts are taken over depth changes in order to achieve a shorter path.
+
+The derivative approximation, combined with the discontinuity of the original test.png, also contributes to this problem. Demonstrate this by the same step cost as in soln3, but use the nonsmoothed test.png. Call this soln4.
