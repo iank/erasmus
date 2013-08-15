@@ -1,5 +1,4 @@
 function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, disp)
-%    getXm = memoize1(@getX);
     P = length(agents);
 
     if (disp)
