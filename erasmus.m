@@ -16,7 +16,7 @@ gens = 50;
 % Initial population
 agents = zeros(n, P);
 for i=1:P
-    agents(:,i) = randn(n,1)*0.1;
+    agents(:,i) = trnd(2,n,1)*0.1;
 end
 
 getXm = memoize1(@getX);
@@ -52,7 +52,7 @@ for generation=1:gens
 
         % Mutate
         mb = rand(size(child)) < 0.02;
-        nb = 0.1*randn(sum(mb),1);
+        nb = 0.1*trnd(2,sum(mb),1);
 
         child(mb) = nb;
         np(:,j) = child;
@@ -60,7 +60,7 @@ for generation=1:gens
 
     % Entirely new agents
     for j=(P-14):P
-        np(:,j) = 0.1*randn(n,1);
+        np(:,j) = 0.1*trnd(2,n,1);
     end
     agents = np;
 end
