@@ -14,57 +14,55 @@ P = 200; % population size
 gens = 50;
 
 % Initial population
-agents = zeros(n, P);
 for i=1:P
-    agents(:,i) = trnd(2,n,1)*0.1;
+    agents(i).alpha = trnd(2,n,1)*0.1;
 end
 
-getXm = memoize1(@getX);
-
-cost = zeros(1,P);
 mc = zeros(gens,1);
 for generation=1:gens
     tic
-    for i=1:P
-        [cost(i) f(i)]=agent(im, agents(:,i), p1, p2, epsilon, lambda, n, maxN, 0, getXm);
-    end
-    disp(sprintf('Generation %d/%d: %6.3f (finished: %d %2.3f)', generation, gens, min(cost), f(find(cost == min(cost), 1)), sum(f)/numel(f)));
-    mc(generation) = min(cost);
+    agents=agent(im, agents, p1, p2, epsilon, lambda, n, maxN, 0);
+    cost = [agents.cost];
+    f = [agents.f];
+    best_idx = find(cost == min(cost),1);
+    best_f = f(best_idx);
+    best_cost = min(cost);
+    f_rat = sum(f)/numel(f);
+    
+    disp(sprintf('Generation %d/%d: %6.3f (finished: %d %2.3f)', generation, gens, best_cost, best_f, f_rat));
+    mc(generation) = best_cost;
     toc
 
-    % New population
-    np = zeros(n,P);
-
+    %%%% New population
     % Keep best individual (Elitism)
-    np(:,1) = agents(:,find(cost == min(cost),1));
+    np(1) = agents(best_idx);
 
     % Create rest of population via crossover
-    weights = 1 ./ (cost ./ sum(cost));
+    weights = 1 ./ ([agents.cost] ./ sum([agents.cost]));
     for j=2:(P-15)
         % Select parents
         idx = randweightedpick(weights, 2);
-        parents = agents(:,idx);
+        parents = agents(idx);
 
         % 2-point Crossover
         pivots = sort(floor(rand(2,1)*n)+1);
-        child = parents(:,1);
-        child(pivots(1):pivots(2)) = parents(pivots(1):pivots(2),2);
+        child = parents(1);
+        child.alpha(pivots(1):pivots(2)) = parents(2).alpha(pivots(1):pivots(2));
 
         % Mutate
-        mb = rand(size(child)) < 0.02;
+        mb = rand(size(child.alpha)) < 0.02;
         nb = 0.1*trnd(2,sum(mb),1);
 
-        child(mb) = nb;
-        np(:,j) = child;
+        child.alpha(mb) = nb;
+        np(j) = child;
     end
 
     % Entirely new agents
     for j=(P-14):P
-        np(:,j) = 0.1*trnd(2,n,1);
+        np(j).alpha = 0.1*trnd(2,n,1);
     end
     agents = np;
 end
 
-idx = find(cost == min(cost), 1);
-bestAgent = agents(:,idx);
-agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1, getXm);
+bestAgent = agents(best_idx);
+agent(im, bestAgent, p1, p2, epsilon, lambda, n, maxN, 1);
