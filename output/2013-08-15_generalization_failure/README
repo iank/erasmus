@@ -1,0 +1,25 @@
+Given image 1:
+
+------ -----
+----      ---------
+------------
+
+and image 2:
+
+------------
+----      ---------
+------ -----
+
+We can show that agents learn their environment by training on image 1 and
+testing on image 2. Note that in this case the failure to generalize is not
+something that can be overcome, even with a truly intelligent model. Without a
+priori knowledge of the environment (ie with only local knowledge) it is
+impossible for even a human walking down the street to know which fork is best
+to take.
+
+
+Training on (20x20 smoothed) testfork.png. Call best path soln1
+
+Then test on (smoothed) testfork2.png. Show failure, call soln2.
+
+This is motivation for attempting to generalize by evaluating each agent on many images and summing(?? or sum of normalized cost squared?) the costs.

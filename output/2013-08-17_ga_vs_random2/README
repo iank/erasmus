@@ -1,0 +1,11 @@
+n = 4;
+% rng(1237)  % successful agent
+epsilon = 4;
+lambda = 10;
+maxN = 500;
+
+50 generations, 10% random
+
+%p1 = 17;
+%p2 = 219;
+p1 = 34; p2 = 216;
