@@ -13,6 +13,7 @@ maxN = 500;
 p1 = 32; p2 = 68;
 
 P = 200; % population size
+P_new = .1; % pct of population to be entirely new each generation
 gens = 100;
 
 % Initial population
@@ -52,7 +53,8 @@ for generation=1:gens
 
     % Create rest of population via crossover
     weights = 1 ./ ([agents.cost] ./ sum([agents.cost]));
-    for j=2:(P-15)
+    P_children = floor(P*(1-P_new));
+    for j=2:P_children
         % Select parents
         idx = randweightedpick(weights, 2);
         parents = agents(idx);
@@ -71,7 +73,7 @@ for generation=1:gens
     end
 
     % Entirely new agents
-    for j=(P-14):P
+    for j=(P_children+1):P
         np(j).alpha = 0.1*trnd(2,n,1);
     end
     agents = np;
