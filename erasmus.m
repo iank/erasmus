@@ -1,22 +1,21 @@
-%im = imread('PerlinNoise2d.png', 'png');
-im = imread('test.png', 'png');
+im = imread('PerlinNoise2d.png', 'png');
+%im = imread('test.png', 'png');
 im = double(im(:,:,1));
 % smooth image
-im = filter2(ones(20,20)/(20*20), im);
+%im = filter2(ones(20,20)/(20*20), im);
 
 n = 4;
 % rng(1237)  % successful agent
 epsilon = 4;
-lambda = 1;
+lambda = 0.001;
 maxN = 500;
 
-%p1 = 17;
-%p2 = 219;
-p1 = 34; p2 = 216;
+p1 = 30;
+p2 = 267;
 
 P = 200; % population size
 P_new = .1; % pct of population to be entirely new each generation
-gens = 50;
+gens = 100;
 
 % Initial population
 for i=1:P

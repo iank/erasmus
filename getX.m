@@ -4,7 +4,7 @@ function X = getX(im, x, y, thetas, epsilon)
     P = size(x,1);
 
     X = zeros(n,P);
-    for i=1:length(thetas)
+    for i=1:n
         theta = thetas(i);
         X(i,:) = getDDvf(im, x, y, theta, epsilon);
     end
