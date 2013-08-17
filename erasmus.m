@@ -2,7 +2,7 @@ im = imread('PerlinNoise2d.png', 'png');
 %im = imread('test.png', 'png');
 im = double(im(:,:,1));
 % smooth image
-%im = filter2(ones(20,20)/(20*20), im);
+im = filter2(ones(20,20)/(20*20), im);
 
 n = 4;
 % rng(1237)  % successful agent
