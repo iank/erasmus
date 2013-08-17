@@ -15,6 +15,11 @@ function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, dis
         alpha(:,k) = agents(k).alpha;
     end
 
+    % Move this outside of getX b/c previously we spent 44s self time
+    % inside linspace (out of 217s spent in getX total, over 390145 calls)
+    thetas = linspace(0,2*pi,n+1);
+    thetas = thetas(2:end);
+
     for i=1:maxN
         tp1 = p1;
         tp2 = p2;
@@ -22,7 +27,7 @@ function ret=agent(im, agents, start_p1, start_p2, epsilon, lambda, n, maxN, dis
         p2p1 = sub2ind(size(im), p2, min(p1,size(im,2)));
         a = im(p2p1);
 
-        X = getX(im, p1.*(1-f), p2.*(1-f), n, epsilon);
+        X = getX(im, p1.*(1-f), p2.*(1-f), thetas, epsilon);
         theta_hat = h_ax(alpha, X);
         p1 = round(p1 + epsilon*cos(theta_hat));
         p2 = round(p2 + epsilon*sin(theta_hat));
