@@ -1,5 +1,5 @@
 % Approximate (w/ epsilon) the directional derivative of f at (x,y)
-% along a unit vector defined by theta.
+% along a vector defined by theta.
 
 function g=getDDvf(im, x, y, theta, epsilon)
     x2 = x + epsilon*cos(theta);
