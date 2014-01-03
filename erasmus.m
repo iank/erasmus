@@ -13,13 +13,13 @@ maxN = 500;
 p1 = 30;
 p2 = 267;
 
-P = 200; % population size
+P = 100; % population size
 P_new = .1; % pct of population to be entirely new each generation
-gens = 100;
+gens = 50;
 
 % Initial population
 for i=1:P
-    agents(i).alpha = trnd(2,n,1)*0.1;
+    agents(i).alpha = trnd(2,n+1,1)*0.1;
 end
 
 mc = zeros(gens,1);
@@ -61,7 +61,7 @@ for generation=1:gens
         parents = agents(idx);
 
         % 2-point Crossover
-        pivots = sort(floor(rand(2,1)*n)+1);
+        pivots = sort(floor(rand(2,1)*n+1)+1);
         child = parents(1);
         child.alpha(pivots(1):pivots(2)) = parents(2).alpha(pivots(1):pivots(2));
 
@@ -75,7 +75,7 @@ for generation=1:gens
 
     % Entirely new agents
     for j=(P_children+1):P
-        np(j).alpha = 0.1*trnd(2,n,1);
+        np(j).alpha = 0.1*trnd(2,n+1,1);
     end
     agents = np;
 end
